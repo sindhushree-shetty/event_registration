@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .update-btn {
+            background-color: #4CAF50;
+        }
+
+        .delete-btn {
+            background-color: red;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🎉 {{ name }} registered for {{ event }} successfully!</h2>
+
+        <hr>
+
+        <p>Want to update your registration?</p>
+        <form action="/update-page" method="post">
+            <input type="hidden" name="email" value="{{ email }}">
+            <button type="submit" class="update-btn">Update</button>
+        </form>
+
+        <p>Want to delete your registration?</p>
+        <form action="/delete" method="post">
+            <input type="hidden" name="email" value="{{ email }}">
+            <button type="submit" class="delete-btn">Delete</button>
+        </form>
+    </div>
+</body>
+</html>
