@@ -2,21 +2,71 @@
 <html>
 <head>
     <title>Event Registration</title>
-    <link href="/static/style.css" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("/static/bg1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px 35px;
+            border-radius: 12px;
+            width: 360px; /* <== Wider here */
+            text-align: center;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h2>Register for Event</h2>
+        <h2>Register</h2>
         <form method="post" action="/register">
-            <label>Name:</label><br>
-            <input type="text" name="name" required><br><br>
-
-            <label>Email:</label><br>
-            <input type="email" name="email" value="{{email}}" required readonly><br><br>
-
-            <label>Event Name:</label><br>
-            <input type="text" name="event" required><br><br>
-
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" value="{{email}}" required readonly>
+            <input type="text" name="event" placeholder="Event Name" required>
             <button type="submit">Register</button>
         </form>
     </div>

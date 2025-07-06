@@ -2,16 +2,65 @@
 <html>
 <head>
     <title>Login</title>
-    <link href="/static/style.css" rel="stylesheet" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-image: url("/static/bg1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .wrapper {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="email"],
+        input[type="submit"] {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Login</h2>
-        <form action="/login" method="post">
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <input type="submit" value="Login">
-        </form>
+    <div class="wrapper">
+        <div class="container">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <input type="email" name="email" placeholder="Email" required><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
     </div>
 </body>
 </html>
